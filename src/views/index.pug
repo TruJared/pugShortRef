@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+html(lang="en")
+  include includes/_head.pug
+  body
+  .wrapper
+    h1#heading
+      a.anchor-class(href='https://www.youtube.com/watch?v=kt3cEjjkCZA&t=4s' target='_blank') Video Here
+    .divless-div
+      p hard to belive that this is all in a div
+      p
+        |  this is a multiline
+        |  paragraph in pug
+      p.
+        so is
+        this
+    .attribute
+      h2 and now for attirbutes!
+      input(type='password' name='password-input' placeholder='fake password!')
+      p now check out some inline javascript!
+    .inline-js
+      h2 some inline JS
+      - const lotsOfClasses = ['cool', 'very-cool', 'coolest'];
+      - const myStyle = {color: 'blue', 'background-color': 'orange',padding: '1px', 'margin-bottom': '10px', width: '60%'};
+      - const myAttributes = {src: 'https://picsum.photos/100/100/?random', alt: 'webimage'};
+      p.multi-classes(class=lotsOfClasses) look at all these classes -> f12 for console!
+      div(style=myStyle)
+        p notice anything different about this line?
+      img&attributes(myAttributes)
+    .each-loop
+      - const people = ['👨', '👩', '👦', '👧', '🐈'];
+      - const empty = {};
+      h2 the each loop is fun
+      ol
+        each person in people
+          li= person
+      p.
+        this is a data-less list, good for dynamic content that
+        may return no info
+      ol
+        each item in empty
+          li= item
+        else
+          strong 💀 No Data 💀
+    .conditionals
+      - const returningUser = 'Jared'; // or true or false
+      h2 Conditionals
+      if returningUser === true
+        p Welcome Back
+      else if returningUser === false
+        p Hello First Time User
+      else
+        p Hello #{returningUser}
+      p 👍 Can also use case statments
+      case returningUser
+        when true
+          p Welcome Back
+        when false
+          p Hello First Time User
+        default
+          p Hello #{returningUser}
+    .mixins
+      h2 mixins
+      p check out some comments using a mixin:
+      .comments
+        include ./mixins/_comments
+        +comment({date: '03/02/2019', author:'🐶', comment:'Woof', admin: false})
+        +comment({date: '03/05/2019', author:'🐱', comment:'Mew', admin: true})
+        +comment({date: '03/02/2019', author:'🐶', comment:'Woof', admin: false})
+        +comment({date: '03/05/2019', author:'🐱', comment:'Mew', admin: true})
+        +comment({date: '03/02/2019', author:'🐶', comment:'Woof', admin: false})
+        +comment({date: '03/05/2019', author:'🐱', comment:'Mew', admin: true})
+        +comment({date: '03/02/2019', author:'🐶', comment:'Woof', admin: false})
+        +comment({date: '03/05/2019', author:'🐱', comment:'Mew', admin: true})
+        +comment({date: '03/02/2019', author:'🐶', comment:'Woof', admin: false})
+        +comment({date: '03/05/2019', author:'🐱', comment:'Mew', admin: true})
+        +comment({date: '03/02/2019', author:'🐶', comment:'Woof', admin: false})
+        +comment({date: '03/05/2019', author:'🐱', comment:'Mew', admin: true})
+  include includes/_footer.pug
+    script(src="../javascripts/app.js")

@@ -1,0 +1,10 @@
+mixin comment(commentData)
+  .comments__comment-box
+
+    if commentData.admin
+      p.comments__comment-box__date.comments__comment-box__date-admin= commentData.date
+    else
+      p.comments__comment-box__date= commentData.date
+
+    p.comments__comment-box__author= commentData.author
+    p.comments__comment-box__comment= commentData.comment

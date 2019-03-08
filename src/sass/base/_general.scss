@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: color(background);
+}
+
+.wrapper {
+  padding-left: $spacer * 10;
+}
+
+li {
+  list-style: none;
+  display: inline;
+  padding-right: $spacer;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  color: grey(2);
+
+  &:hover {
+    color: color(primary);
+  }
+}
+
+.comments {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__comment-box {
+    position: relative;
+    border: 1px solid rgba(55, 55, 55, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin: $spacer * 2;
+    width: 250px;
+
+    &__date {
+      font-size: $base-font-size * 0.9;
+
+      @include line-break(
+        $width: 95%,
+        $margin: $spacer * 0.25 auto,
+        $color: rgba(55, 55, 55, 0.6)
+      );
+
+      &-admin {
+        color: color(secondary);
+      }
+    }
+
+    &__author {
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+    }
+
+    &__comment {
+      text-align: left;
+      padding-left: $spacer * 3.5;
+
+      &:before {
+        content: 'Said: ';
+      }
+    }
+  }
+}
+
+// footer
+.footer {
+  background: $black;
+  color: grey(2);
+  padding: $spacer;
+  text-align: center;
+
+  p {
+    margin: 0;
+    padding-top: $spacer;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    padding-top: $spacer;
+    list-style: none;
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    li:not(:last-of-type) {
+      padding-right: $spacer * 2;
+    }
+  }
+}

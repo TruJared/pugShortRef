@@ -1,0 +1,31 @@
+{
+  "name": "pug",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "build": "parcel build src/views/index.pug",
+    "nuke": "rm node_modules/ -rf package-lock.json && npm install",
+    "start": "parcel ./src/views/index.pug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.4.10",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "parcel-bundler": "^1.12.0",
+    "pug": "^2.0.3",
+    "sass": "^1.17.2"
+  },
+  "description": "🔥 💧 🍽",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trujared/boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trujared/boilerplate/issues"
+  },
+  "homepage": "https://github.com/trujared/boilerplate#readme"
+}
